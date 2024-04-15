@@ -21,5 +21,13 @@
             <img src="{{ asset('img/block5.png') }}" alt="" class="block5_img">
         </div>
 
+        <div class="block6">
+            <img src="{{ asset('img/block6.png') }}" alt="" class="block6_img">
+        </div>
+
+        <div class="block7">
+            <img src="{{ asset('img/block7.png') }}" alt="" class="block7_img">
+        </div>
+
     </main>
 @endsection

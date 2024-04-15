@@ -11,10 +11,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
 </head>
-{{-- @if (Route::has('login'))
-    @auth --}}
+@if (Route::currentRouteName() == 'login')
+
+    <header>
+        <a href="{{ route('main') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'></a>
+        <div class="link">
+            <a href="#" class="">КАТАЛОГ КУРСОВ</a>
+            <a href="#" class="">ПОДДЕРЖКА</a>
+            <a href="#" class="">О НАС</a>
+        </div>
+        <div class="autorize">
+            <a href="{{ route('reg') }}" class="btn">Регистрация</a>
+        </div>
+        {{-- <img src="{{ asset('img/icon.svg') }}" alt="icon" class='icon'> --}}
+        {{-- <a href="{{ route('edit') }}" style="width: 100px">Edit profile</a>
+        <a href="{{ route('logout') }}">Exit</a> --}}
+
+    </header>
+    @elseif (Route::currentRouteName() == 'main')
+    <header>
+
+        <img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'>
+        <div class="link">
+            <a href="#" class="">КАТАЛОГ КУРСОВ</a>
+            <a href="#" class="">ПОДДЕРЖКА</a>
+            <a href="#" class="">О НАС</a>
+        </div>
+        <div class="autorize">
+            <a href="{{ route('login') }}" class="btn">Авторизация</a>
+            <a href="{{ route('reg') }}" class="btn">Регистрация</a>
+        </div>
+
+    </header>
+    {{-- @auth --}}
+     @else
         <header>
-            <img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'>
+
+            <a href="{{ route('main') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'></a>
             <div class="link">
                 <a href="#" class="">КАТАЛОГ КУРСОВ</a>
                 <a href="#" class="">ПОДДЕРЖКА</a>
@@ -22,35 +55,9 @@
             </div>
             <div class="autorize">
                 <a href="{{ route('login') }}" class="btn">Авторизация</a>
-                <a href="{{ route('reg') }}" class="btn">Регистрация</a>
-            </div>
-            {{-- <img src="{{ asset('img/icon.svg') }}" alt="icon" class='icon'> --}}
-            {{-- <a href="{{ route('edit') }}" style="width: 100px">Edit profile</a>
-            <a href="{{ route('logout') }}">Exit</a> --}}
-
-        </header>
-    {{-- @elseif (Route::currentRouteName() == 'main')
-        <header>
-
-            <div class="autorize">
-                <a href="{{ route('login') }}">Log in</a>
-                <a href="{{ route('reg') }}">Reg</a>
-            </div>
-
-        </header>
-    @else
-        <header>
-
-            <div class="autorize">
-                <a href="{{ route('login') }}">Log in</a>
-                <a href="{{ route('reg') }}">Reg</a>
-            </div>
-
-            <div class="link">
-                <a href="{{ route('main') }}">Home</a>
             </div>
 
         </header>
 
-    @endauth
-@endif --}}
+    {{-- @endauth --}}
+@endif

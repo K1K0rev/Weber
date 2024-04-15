@@ -1,27 +1,25 @@
-@font-face {
-    font-family: 'Inter Bold';
-    src: url('Inter-Bold.woff2') format('woff2'),
-        url('Inter-Bold.woff') format('woff');
-}
-
 body {
+    width: 100%;
     padding: 0;
     margin: 0;
     font-family: 'Inter Bold', sans-serif;
     font-weight: bold;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /*header*/
 
 header {
-    height: 88px;
+    min-height: 88px;
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px #A8A8A8;
     border-radius: 10px;
     align-items: center;
-    padding-left: 167px;
-    padding-right: 167px;
+    padding: 0px 50px 0px 50px;
+    background-color: #FFFFFF;
 }
 
 header a {
@@ -42,6 +40,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 80px;
+    flex: 2 0 auto;
 }
 
 
@@ -90,6 +89,28 @@ main {
     width: 80%;
 }
 
+/*block6*/
+
+.block6 {
+    display: flex;
+    justify-content: center;
+}
+
+.block6_img {
+    width: 80%;
+}
+
+/*block7*/
+
+.block7 {
+    display: flex;
+    justify-content: center;
+}
+
+.block7_img {
+    width: 80%;
+}
+
 /*button*/
 
 .autorize {
@@ -106,13 +127,23 @@ main {
     font-size: 20px;
 }
 
-@media screen and (min-width: 1150px) {
+footer {
+    display: flex;
+    margin-top: 80px;
+    height: 80px;
+    background-color: #F6F6F6;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+    border-radius: 10px 10px 0px 0px;
+    flex-shrink: 0;
+}
+
+@media screen and (min-width: 1200px) {
 
     header {
+        display: flex;
+        gap: 10px;
         font-size: 20px;
-        padding-left: 50px;
-        padding-right: 50px;
-        height: 88px;
     }
 
     .link {
@@ -134,7 +165,7 @@ main {
     }
 
     .autorize {
-        gap: 40px;
+        gap: 30px;
     }
 
     .btn {
@@ -143,7 +174,7 @@ main {
 
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1200px) {
 
     header {
         font-size: 20px;
@@ -176,6 +207,9 @@ main {
 
     .link a:first-child {
         display: block;
+        border: solid 1px #dfdfdf;
+        border-radius: 5px 0px 0px 5px;
+        padding: 5px;
     }
 
     .autorize {
