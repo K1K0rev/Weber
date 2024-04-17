@@ -19,6 +19,8 @@ class Lesson extends Model
         'course_id',
     ];
 
+    public $timestamps = false;
+
     public function course() : BelongsTo
     {
         return $this->belongsTo(Course::class);

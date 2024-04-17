@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <main>
 
         <img src="{{ asset('img/block1.png') }}" alt="" class="block1">
         <img src="{{ asset('img/block1_m2.svg') }}" alt="" class="block1_m">
@@ -29,5 +28,4 @@
             <img src="{{ asset('img/block7.png') }}" alt="" class="block7_img">
         </div>
 
-    </main>
 @endsection

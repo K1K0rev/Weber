@@ -20,14 +20,14 @@ class RegisterController extends Controller
     protected function create(RegisterRequest $request)
     {
 
+
+
         $data = $request->validated();
 
         User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+            'login' => $data['login'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'nickname' => $data['nickname'],
         ]);
 
         return redirect()->route('login');

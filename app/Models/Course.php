@@ -14,10 +14,12 @@ class Course extends Model
 
     protected $fillable = [
         'name',
-        'description',
+        'duration_training',
         'start_date',
         'end_date',
     ];
+
+    public $timestamps = false;
 
     public function lesson(): HasMany
     {
