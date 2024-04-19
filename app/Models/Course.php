@@ -14,7 +14,7 @@ class Course extends Model
 
     protected $fillable = [
         'name',
-        'duration_training',
+        'course_type',
         'start_date',
         'end_date',
     ];

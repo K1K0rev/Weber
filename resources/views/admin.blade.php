@@ -12,8 +12,8 @@
         <input type="text" id="name" name="name" required>
     </div>
     <div>
-        <label for="duration_training">Длительность обучения:</label>
-        <input type="number" id="duration_training" name="duration_training" required>
+        <label for="course_type">Напрвление курса:</label>
+        <input type="text" id="course_type" name="course_type" required>
     </div>
     <div>
         <label for="start_date">Дата начала:</label>

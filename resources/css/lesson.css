@@ -1,8 +1,14 @@
-.lessons {
+.grid_lessons {
     display: flex;
-    flex-wrap: wrap;
-    gap: 120px;
     justify-content: center;
+}
+
+.lessons {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 120px;
     align-items: center;
 }
 
@@ -11,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 200px;
+    width: 250px;
     height: 200px;
     background: #F6F6F6;
     border-radius: 20px;
@@ -23,7 +29,6 @@
     font-size: 32px;
     margin-top: 60px;
     margin-bottom: 30px;
-    margin-top: 128px;
 }
 
 .mini_title {

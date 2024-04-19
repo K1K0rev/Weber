@@ -17,14 +17,14 @@ class AdminController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'duration_training' => 'required',
+            'course_type' => 'required',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after:start_date',
         ]);
 
         Course::create([
             'name' => $request->name,
-            'duration_training' => $request->duration_training,
+            'course_type' => $request->course_type,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
         ]);

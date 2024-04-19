@@ -9,12 +9,16 @@ body {
     flex-direction: column;
 }
 
+main {
+    margin-top: 88px;
+}
+
 /*header*/
 
 header {
     position: fixed;
     box-sizing: border-box;
-    padding: 0px 50px 0px 50px;
+    padding: 0px 90px 0px 90px;
     width: 100%;
     min-height: 88px;
     display: flex;
@@ -35,6 +39,81 @@ a {
     display: flex;
     text-align: center;
     align-items: center;
+}
+
+.header_icon {
+    cursor: pointer;
+}
+
+.catalog {
+    border: 1px solid #667FC1;
+    border-radius: 5px;
+    color: #667FC1;
+    padding: 10px;
+}
+
+/*button*/
+
+.autorize {
+    display: flex;
+    gap: 30px;
+}
+
+.btn {
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #667FC1;
+    border-radius: 5px;
+    color: #667FC1;
+    font-size: 20px;
+}
+
+footer {
+    display: flex;
+    margin-top: 80px;
+    height: 80px;
+    background-color: #F6F6F6;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+    border-radius: 10px 10px 0px 0px;
+    flex-shrink: 0;
+}
+
+/*burger*/
+
+.burger {
+    width: 10vw;
+    height: auto;
+    position: absolute;
+    right: 15px;
+    top: 110px;
+    opacity: 0;
+    animation: slide 0.5s linear;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border: solid 1px #667FC1;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.burger a {
+    border-bottom: solid 1px #667FC1;
+    padding: 10px;
+    color: #667FC1;
+}
+
+.burger a:last-child {
+    border-bottom: 0px;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /*main*/
@@ -61,7 +140,6 @@ main {
 
 .block1 {
     width: 100%;
-    margin-top: 88px;
 }
 
 /*block2*/
@@ -123,33 +201,6 @@ main {
 
 .block7_img {
     width: 80%;
-}
-
-/*button*/
-
-.autorize {
-    display: flex;
-    gap: 30px;
-}
-
-.btn {
-    padding: 10px;
-    background: #FFFFFF;
-    border: 1px solid #667FC1;
-    border-radius: 5px;
-    color: #667FC1;
-    font-size: 20px;
-}
-
-footer {
-    display: flex;
-    margin-top: 80px;
-    height: 80px;
-    background-color: #F6F6F6;
-    align-items: center;
-    padding: 0px 50px 0px 50px;
-    border-radius: 10px 10px 0px 0px;
-    flex-shrink: 0;
 }
 
 @media screen and (min-width: 1200px) {

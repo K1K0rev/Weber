@@ -11,6 +11,8 @@ class CatalogController extends Controller
 
         $courses = Course::all();
 
-        return view('catalog', ['courses' => $courses]);
+        $course_type = Course::distinct()->pluck('course_type');
+
+        return view('catalog', compact('courses','course_type'));
     }
 }

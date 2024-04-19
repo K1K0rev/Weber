@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('duration_training');
+            $table->string('course_type');
             $table->date('start_date');
             $table->date('end_date');
         });

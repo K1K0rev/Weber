@@ -9,14 +9,14 @@
     font-size: 32px;
     margin-top: 60px;
     margin-bottom: 30px;
-    margin-top: 128px;
 }
 
 .mini_title {
     font-size: 32px;
+    text-transform: uppercase;
 }
 
-.front {
+.block {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -44,6 +44,7 @@
 
 .title_course {
     font-size: 36px;
+    text-transform: uppercase;
 }
 
 .mini_title_course {
