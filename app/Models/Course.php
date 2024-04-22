@@ -15,6 +15,7 @@ class Course extends Model
     protected $fillable = [
         'name',
         'course_type',
+        'course_status',
         'start_date',
         'end_date',
     ];
