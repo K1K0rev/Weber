@@ -16,6 +16,7 @@ class Course extends Model
         'name',
         'course_type',
         'course_status',
+        'short_description',
         'start_date',
         'end_date',
     ];

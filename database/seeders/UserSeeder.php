@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
             [
                 'login' => 'KiKO',
                 'email'=> 'kozurev44@gmail.com',
+                'admin_rights' => '1',
                 'password' => '12345678',
             ]
         ];

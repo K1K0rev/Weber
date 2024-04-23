@@ -1,0 +1,26 @@
+main {
+    text-align: center;
+    align-items: center;
+}
+
+.container {
+    width: 70vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: left;
+    text-align: left;
+    align-items: center;
+}
+
+.description {
+    width: 100%;
+    font-size: 20px;
+}
+
+.title {
+    font-size: 32px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}

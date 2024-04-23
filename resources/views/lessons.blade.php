@@ -5,15 +5,16 @@
 @section('content')
     <span class="title">УРОКИ</span>
 
-        <container class="grid_lessons">
+    <div class="container">
+        <div class="lessons">
             @foreach ($lessons as $item)
-            <a href="{{ route('lesson', ['course_id' => $item->course_id, 'id' => $item->id]) }}" class="lessons">
+                <a href="{{ route('lesson', ['course_id' => $item->course_id, 'name' => $item->name]) }}">
                     <div class="lesson">
                         <span class="mini_title">УРОК {{ $count++ }}</span>
                         <span class="mini_title">{{ $item->name }}</span>
                     </div>
                 </a>
-                @endforeach
-        </container>
-
+            @endforeach
+        </div>
+    </div>
 @endsection

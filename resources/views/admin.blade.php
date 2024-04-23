@@ -34,14 +34,6 @@
         <input type="text" id="name" name="name" required>
     </div>
     <div>
-        <label for="lesson_text">Текст урока:</label>
-        <input type="text" id="lesson_text" name="lesson_text" required>
-    </div>
-    <div>
-        <label for="lesson_img">Изображения:</label>
-        <input type="file" id="lesson_img" name="lesson_img">
-    </div>
-    <div>
         <label for="course_id">Номер курса:</label>
         <input type="number" id="course_id" name="course_id" required>
     </div>

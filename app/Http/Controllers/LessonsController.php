@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
@@ -18,12 +17,12 @@ class LessonsController extends Controller
         return view('lessons', ['lessons' => $lessons], compact('count'));
     }
 
-        // public function lesson($id, $course_id) {
+        public function showLesson($course_id, $id) {
 
-        //     $lessons = Lesson::where('course_id', $course_id)->get();
+            $lesson = Lesson::where('course_id', $course_id)->get();
 
-        //     $lesson = Lesson::where('id', $id)->get();
+            $name = $lesson->name;
 
-        //     return view('lesson', ['lesson' => $lesson]);
-        // }
+            return view('lesson.' . $name, compact('lesson'));
+        }
 }

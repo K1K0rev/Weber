@@ -36,15 +36,11 @@ class AdminController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'lesson_text' => 'required',
-            'lesson_img',
             'course_id' => 'required',
         ]);
 
         Lesson::create([
             'name' => $request->name,
-            'lesson_text' => $request->lesson_text,
-            'lesson_img' => $request->lesson_img,
             'course_id' => $request->course_id,
         ]);
 

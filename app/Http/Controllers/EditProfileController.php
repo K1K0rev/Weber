@@ -11,28 +11,17 @@ class EditProfileController extends Controller
 {
     public function index() {
 
-        return view('edit_profile');
+        $user = Auth::user();
+        return view('edit_profile', ['user' => $user]);
     }
 
-    public function store_data (Request $request) {
 
-        $request->validate([
-            'login',
-            'icon',
-            'nickname',
-            'email' => 'required',
-            'password',
-        ]);
+    public function update(Request $request)
+    {
+        $user = User::find(Auth::id());
+        $updatedData = array_filter($request->all());
+        $user->update($updatedData);
 
-        $id = Auth::id();
-
-        $data = User::create([
-            'id' => $id,
-            'icon' => $request->icon,
-            'nickname' => $request->nickname,
-            'email' => $request->email,
-            'password' => $request->password,
-        ]);
-
-        }
+        return redirect()->route('profile');
+    }
 }

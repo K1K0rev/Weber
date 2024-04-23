@@ -1,21 +1,15 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
     @vite('resources/css/auth.css')
-</head>
+
 
 <body>
     @extends('layouts.app')
     @section('content')
         <div class="auth">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="error">{{ $error }}</div>
+                @endforeach
+            @endif
             <form method="POST" class="form_auth">
                 <div class="title">
                     <img src="{{ asset('img/logo.svg') }}" alt="logo">
@@ -24,10 +18,12 @@
                 @csrf
                 <div class="input_date">
                     <div class="line">
-                        <input id="login" name="login" placeholder="LOGIN" value="{{ old('login') }}" required autofocus>
+                        <input id="login" name="login" placeholder="LOGIN" value="{{ old('login') }}" required
+                            autofocus>
                     </div>
                     <div class="line">
-                        <input id="email" name="email" placeholder="EMAIL" value="{{ old('email') }}" required autofocus>
+                        <input id="email" name="email" placeholder="EMAIL" value="{{ old('email') }}" required
+                            autofocus>
                     </div>
                     <div class="line">
                         <input id="password" type="password" name="password" placeholder="PASSWORD" required>

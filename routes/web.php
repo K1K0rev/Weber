@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
+Route::get('/catalog/show/{id}', [CatalogController::class, 'show'])->name('show');
+Route::post('/catalog/show/{id}/description', [CatalogController::class, 'description'])->name('description');
 Route::get('/support', [SupportController::class, 'index'])->name('support');
 Route::get('/about_us', [AboutUsController::class, 'index'])->name('about_us');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::post('/admin/store_course', [AdminController::class, 'store_course'])->name('store_course');
 Route::post('/admin/store_lesson', [AdminController::class, 'store_lesson'])->name('store_lesson');
-Route::get('/lessons/{course_id}', [LessonsController::class, 'index'])->name('lessons');
-// Route::get('/lesson/{course_id}/{id}', [LessonsController::class, 'lesson'])->name('lesson');
+Route::get('course/{course_id}/lessons', [LessonsController::class, 'index'])->name('lessons');
+Route::get('course/{course_id}/lesson/{name}', [LessonsController::class, 'showLesson'])->name('lesson');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/edit_profile', [EditProfileController::class, 'index'])->name('edit_profile');
-Route::post('/edit_profile', [EditProfileController::class, 'store_data'])->name('store_data');
+Route::put('/edit_profile', [EditProfileController::class, 'update'])->name('update');
 
 require_once __DIR__ . '/auth.php';

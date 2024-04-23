@@ -20,9 +20,15 @@ class RegisterController extends Controller
     protected function create(RegisterRequest $request)
     {
 
-
-
         $data = $request->validated();
+
+        $login = $request->input('login');
+
+        $user_login = User::where('login', $login)->first();
+
+        if ($user_login) {
+            return back()->withErrors(['login' => '! Введите другой логин']);
+        }
 
         User::create([
             'login' => $data['login'],
@@ -33,8 +39,3 @@ class RegisterController extends Controller
         return redirect()->route('login');
     }
 }
-
-
-
-
-

@@ -1,14 +1,18 @@
-.grid_lessons {
+.container {
+    width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .lessons {
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 120px;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 100px;
     align-items: center;
 }
 
@@ -34,3 +38,4 @@
 .mini_title {
     font-size: 24px;
 }
+

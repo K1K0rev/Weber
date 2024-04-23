@@ -63,3 +63,11 @@ input {
     font-weight: bold;
 }
 
+.error {
+    position: absolute;
+    top: 15%;
+    padding: 10px;
+    border: 1px solid #ffaa00;
+    border-radius: 5px;
+    color: #ffaa00;
+}

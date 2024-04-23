@@ -12,7 +12,8 @@ class ProfileController extends Controller
 
         $user_data = User::all();
         $courses = Course::all();
+        $course_status = Course::distinct()->pluck('course_status');
 
-        return view('profile', [ 'user_data' => $user_data], [ 'courses' => $courses]);
+        return view('profile', compact('user_data','courses','course_status'));
     }
 }
