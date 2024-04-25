@@ -267,17 +267,6 @@ main {
         height: auto;
     }
 
-    .link a {
-        display: none;
-    }
-
-    .link a:first-child {
-        display: block;
-        border: solid 1px #dfdfdf;
-        border-radius: 5px 0px 0px 5px;
-        padding: 5px;
-    }
-
     .autorize {
         flex-direction: column;
         gap: 5px;
@@ -334,14 +323,6 @@ main {
     .icon {
         width: 40px;
         height: auto;
-    }
-
-    .link a {
-        display: none;
-    }
-
-    .link a:first-child {
-        display: block;
     }
 
     .autorize {

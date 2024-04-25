@@ -14,14 +14,12 @@ class LessonsController extends Controller
 
         $count = 1;
 
-        return view('lessons', ['lessons' => $lessons], compact('count'));
+        return view('lessons', compact('lessons','count'));
     }
 
-        public function showLesson($course_id, $id) {
+        public function showLesson($course_id,$name) {
 
             $lesson = Lesson::where('course_id', $course_id)->get();
-
-            $name = $lesson->name;
 
             return view('lesson.' . $name, compact('lesson'));
         }

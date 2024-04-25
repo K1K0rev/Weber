@@ -7,14 +7,19 @@
         <span class="title">КУРСЫ</span>
         <div class="block">
             @foreach ($course_type as $type)
-                <span class="mini_title">{{ $type }}</span>
+                    @if ($type == 'frontend' && $type != 'backend')
+                        <span class="mini_title">{{ $type }}</span>
+                    @elseif($type != 'frontend' && $type == 'backend')
+                        <span class="mini_title">{{ $type }}</span>
+                    @endif
                 @foreach ($courses as $item)
                     @if ($item->course_status !== 'active')
                         @if ($item['course_type'] == $type)
                             <a href="{{ route('show', ['id' => $item->id]) }}" class="course">
                                 <div class="text">
                                     <span class="title_course">ОСНОВЫ {{ $item->name }}</span>
-                                    <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $item->duration_training }} ДНЕЙ</span>
+                                    <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $item->duration_training }}
+                                        ДНЕЙ</span>
                                 </div>
                             </a>
                         @endif

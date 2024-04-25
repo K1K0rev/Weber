@@ -5,7 +5,7 @@
 @section('content')
     <span class="title">ИЗМЕНЕНИЕ ЛИЧНЫХ ДАННЫХ</span>
     <div class="container">
-        <form method="POST" action="{{ route('update', $user->id) }}">
+        <form method="POST" action="{{ route('update', $user->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="data_input">
@@ -14,7 +14,7 @@
             </div>
             <div class="data_input">
                 <label for="icon">ICON:</label>
-                <input type="text" id="icon" name="icon">
+                <input type="file" id="icon" name="icon">
             </div>
             <div class="data_input">
                 <label for="email">EMAIL:</label>

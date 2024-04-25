@@ -51,9 +51,9 @@ class User extends Authenticatable
         ];
     }
 
-    public function chats() : HasMany
+    public function chats() : BelongsTo
     {
-        return $this->hasMany(Chat::class);
+        return $this->belongsTo(Chat::class);
     }
 
     public function courses() : BelongsToMany

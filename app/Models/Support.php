@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Support extends Model
@@ -18,8 +19,8 @@ class Support extends Model
         'password',
     ];
 
-    public function chat() : HasMany
+    public function chat(): BelongsToMany
     {
-        return $this->hasMany(Chat::class);
+        return $this->belongsToMany(User::class, 'supports_chats');
     }
 }

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->enum('status', ['pending', 'progress', 'complete']);
             $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
-            $table->integer('support_id')->foreign('support_id')->references('id')->on('supports');
+            $table->integer('support_id');
+            $table->integer('message_id')->foreign('message_id')->references('id')->on('message');
         });
     }
 

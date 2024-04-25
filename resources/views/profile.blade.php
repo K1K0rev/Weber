@@ -43,7 +43,7 @@
 
                     @foreach ($courses as $course)
                         @if ($course->course_status == 'active')
-                            <a href="{{ route('lessons', ['course_id' => $item->id]) }}" class="course">
+                            <a href="{{ route('lessons', ['course_id' => $course->id]) }}" class="course">
                                 <div class="text">
                                     <span class="title_course">ОСНОВЫ {{ $course->name }}</span>
                                     <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $course->duration_training }}
