@@ -37,16 +37,13 @@
         <a href="{{ route('edit_profile') }}" class="profile_btn">РЕДАКТИРОВАТЬ</a>
         <div class="container_3">
 
+            @foreach ($courses as $item)
             @foreach ($user_courses as $course_status => $course)
                 @if ($course_status == 'processing')
                     <span class="title_2">Активные курсы</span>
                 @else
                     <span class="title_2">Завершенные курсы</span>
                 @endif
-                @foreach ($courses as $item)
-                {{ dd($item) }}
-                    {{-- {{ dd($course_id) }} --}}
-                        {{-- @foreach ($courses as $course_data) --}}
                         <a href="{{ route('lessons', ['course_id' => $item->id]) }}" class="course">
                             <div class="text">
                                 <span class="title_course">ОСНОВЫ {{ $item->name }}</span>
@@ -57,18 +54,6 @@
                                 <span class="title_course">{{ $item->course_type }}</span>
                             </div>
                         </a>
-                        {{-- @endforeach --}}
-
-                        <div class="course">
-                            <div class="text">
-                                <span class="title_course">ОСНОВЫ {{ $item->name }}</span>
-                                <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $item->duration_training }}
-                                    ДНЕЙ</span>
-                            </div>
-                            <div class="type">
-                                <span class="title_course">{{ $item->course_type }}</span>
-                            </div>
-                        </div>
 
                 @endforeach
             @endforeach
