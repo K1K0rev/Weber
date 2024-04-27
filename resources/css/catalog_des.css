@@ -4,7 +4,7 @@ main {
 }
 
 .container {
-    width: 70vw;
+    width: 50vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,7 @@ main {
 }
 
 .description {
+    text-align: justify;
     width: 100%;
     font-size: 20px;
 }
@@ -23,4 +24,14 @@ main {
     font-size: 32px;
     margin-top: 60px;
     margin-bottom: 30px;
+}
+
+.btn_des {
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #667FC1;
+    border-radius: 5px;
+    color: #667FC1;
+    font-size: 20px;
+    cursor: pointer;
 }

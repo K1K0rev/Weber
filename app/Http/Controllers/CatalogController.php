@@ -3,18 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\User_course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CatalogController extends Controller
 {
     public function index()
     {
 
-        $courses = Course::all();
+        $user_data = Auth::user();
 
-        $course_type = Course::distinct()->pluck('course_type');
+        $courses = Course::whereDoesntHave('user', function ($query) use ($user_data) {
+            $query->where('user_id', $user_data->id);
+        })->get();
 
-        return view('catalog', compact('courses', 'course_type'));
+        return view('catalog', compact('courses'));
     }
 
     public function show($id)
@@ -26,13 +30,19 @@ class CatalogController extends Controller
 
     public function description ($id) {
 
+        $user_id = auth()->user()->id;
+
         $course = Course::find($id);
 
-        if($course->course_status == 'not_active') {
-            $course->course_status = 'active';
-            $course->save();
-        }
+        $course = User_course::create(
+            [
+                'user_id'=> $user_id,
+                'course_id'=> $course->id,
+                'status' => 'processing',
+            ]
+        );
 
         return redirect()->route('profile');
     }
 }
+

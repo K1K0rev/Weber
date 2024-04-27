@@ -15,3 +15,4 @@ class User_course extends Model
         'status',
     ];
 }
+

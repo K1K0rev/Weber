@@ -6,7 +6,11 @@
 @auth
     @if (Auth::user()->admin_rights == 1)
         @if (Route::currentRouteName() !== 'admin')
-            <a href="{{ url('/admin') }}" class="admin_btn">Admin Panel</a>
+            <div class="admin">
+                <div class="position">
+                    <a href="{{ url('/admin') }}" class="admin_btn">Панель админа</a>
+                </div>
+            </div>
         @endif
     @endif
 @endauth

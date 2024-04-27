@@ -19,23 +19,30 @@ main {
 
 .title_2 {
     font-size: 32px;
+    text-transform: uppercase;
 }
 
 .icon_profile {
-    width: 30%;
+    width: 250px;
     height: auto;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
 }
 
 .info {
     display: flex;
     justify-content: space-between;
-    width: 45vw;
     height: auto;
+    gap: 50px;
 }
 
 .container_2 {
     display: flex;
-    width: 100%;
+    width: auto;
     flex-direction: column;
     text-align: left;
     gap: 20px;
@@ -74,6 +81,17 @@ main {
 
 .mini_title {
     color: #667FC1;
+    text-transform: uppercase;
+}
+
+.profile_btn {
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #667FC1;
+    border-radius: 5px;
+    color: #667FC1;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .block {
@@ -84,7 +102,6 @@ main {
 
 .course {
     display: flex;
-    flex-direction: column;
     width: 80vw;
     height: 180px;
     background-color: #F6F6F6;
@@ -92,7 +109,7 @@ main {
 }
 
 .text {
-    width: 40vw;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -100,6 +117,14 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.type {
+    width: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .title_course {
@@ -110,3 +135,108 @@ main {
 .mini_title_course {
     font-size: 20px;
 }
+
+@media screen and (max-width: 900px ){
+
+    .container_2 {
+
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .info {
+        width: 450px;
+    }
+
+    .mini_title {
+        font-size: 26px;
+    }
+
+    .profile_btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .course_link{
+        align-items: center;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .title_2 {
+        font-size: 26px;
+    }
+
+    .title_course {
+        font-size: 34px;
+    }
+
+    .mini_title_course {
+        font-size: 16px;
+    }
+
+    .data span {
+        font-size: 20px;
+    }
+
+    .icon_profile {
+        width: 150px;
+        height: auto;
+    }
+
+}
+
+
+@media screen and (max-width: 550px ){
+
+    .title {
+        font-size: 28px;
+    }
+
+    .mini_title {
+        font-size: 24px;
+    }
+
+    .title_course {
+        font-size: 28px;
+    }
+
+    .title_2 {
+        font-size: 22px;
+    }
+
+    .mini_title_course {
+        font-size: 14px;
+    }
+
+    .container_2 {
+        align-items: center;
+    }
+
+    .container_3 {
+        align-items: center;
+    }
+
+    .info {
+        flex-direction: column;
+        width: 650px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .info span {
+        text-align: center;
+    }
+
+}
+

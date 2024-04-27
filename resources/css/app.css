@@ -9,10 +9,6 @@ body {
     flex-direction: column;
 }
 
-main {
-    margin-top: 88px;
-}
-
 /*header*/
 
 header {
@@ -35,10 +31,8 @@ a {
     color: black;
 }
 
-.link {
-    display: flex;
-    text-align: center;
-    align-items: center;
+.icon {
+    width: 60px;
 }
 
 .header_icon {
@@ -53,11 +47,6 @@ a {
 }
 
 /*button*/
-
-.autorize {
-    display: flex;
-    gap: 30px;
-}
 
 .btn {
     padding: 10px;
@@ -83,22 +72,24 @@ footer {
 /*burger*/
 
 .burger {
-    width: 10vw;
+    position: fixed;
+    top: 100px;
+    right: 35px;
+    width: 160px;
     height: auto;
-    position: absolute;
-    right: 15px;
-    top: 110px;
     opacity: 0;
-    animation: slide 0.5s linear;
+    font-size: 20px;
+    /* animation: slide 0.5s linear; */
     display: flex;
     text-align: center;
     flex-direction: column;
     border: solid 1px #667FC1;
     border-radius: 5px;
-    background-color: white;
+    background-color: rgb(252, 252, 252);
 }
 
 .burger a {
+    width: auto;
     border-bottom: solid 1px #667FC1;
     padding: 10px;
     color: #667FC1;
@@ -108,14 +99,14 @@ footer {
     border-bottom: 0px;
 }
 
-@keyframes slide {
+/* @keyframes slide {
     0% {
         transform: translateY(-10%);
     }
     100% {
         transform: translateX(0);
     }
-}
+} */
 
 /*main*/
 
@@ -123,14 +114,34 @@ main {
     display: flex;
     flex-direction: column;
     flex: 2 0 auto;
+    margin-top: 88px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.admin {
+    position: fixed;
+    bottom: 12%;
+    width: 100%;
+    height: auto;
+    text-align: end;
+}
+
+.position {
+    width: auto;
+    display: flex;
+    justify-content: end;
 }
 
 .admin_btn {
-    position: fixed;
-    bottom: 100px;
-    right: 50px;
+    margin-right: 40px;
     text-decoration: none;
     color: black;
+    background-color: rgba(242,242,242,0.7);
     border: solid 1px black;
     padding: 10px;
     border-radius: 10px;
@@ -212,10 +223,6 @@ main {
         font-size: 20px;
     }
 
-    .link {
-        gap: 90px;
-    }
-
     .block1_m {
         display: none;
     }
@@ -223,15 +230,6 @@ main {
     .logo {
         width: 50px;
         height: auto;
-    }
-
-    .icon {
-        width: 50px;
-        height: auto;
-    }
-
-    .autorize {
-        gap: 30px;
     }
 
     .btn {
@@ -244,13 +242,9 @@ main {
 
     header {
         font-size: 20px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 85px;
+        padding-right: 85px;
         height: 88px;
-    }
-
-    .link {
-        gap: 40px;
     }
 
     .block1_m {
@@ -262,10 +256,6 @@ main {
         height: auto;
     }
 
-    .icon {
-        width: 50px;
-        height: auto;
-    }
 
     .autorize {
         flex-direction: column;
@@ -285,34 +275,22 @@ main {
 
 /*mobile*/
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
 
     header {
-        width: auto;
+        width: 100%;
         font-size: 16px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 45px;
+        padding-right: 45px;
         height: 64px;
     }
 
     .link {
-        gap: 40px;
+        font-size: 20px;
     }
 
-    .block1 {
-        display: none;
-    }
-
-    .block2 {
-        display: none;
-    }
-
-    .block3 {
-        display: none;
-    }
-
-    .block4 {
-        display: none;
+    .catalog {
+        padding: 5px;
     }
 
     .logo {
@@ -321,13 +299,8 @@ main {
     }
 
     .icon {
-        width: 40px;
+        width: 50px;
         height: auto;
-    }
-
-    .autorize {
-        flex-direction: column;
-        gap: 5px;
     }
 
     .btn {
@@ -339,4 +312,13 @@ main {
         font-size: 12px;
     }
 
+    .burger {
+        font-size: 14px;
+        width: 120px;
+        right: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }

@@ -6,55 +6,74 @@
         <span class="title">ЛИЧНЫЙ КАБИНЕТ</span>
         <div class="container_2">
             <span class="title_2">ПРОФИЛЬ</span>
-            <div style="display: flex; justify-content: center;">
+            <div class="user">
                 <div class="info">
-                    <img src="{{ asset('img/icon.svg') }}" alt="icon" class="icon_profile">
+
+                    <img src="{{ asset('img/rang/' . $user_data->rank . '.png') }}" alt="icon" class="icon_profile">
                     <div class="line"></div>
-                    @foreach ($user_data as $item)
-                        <div class="user_data">
-                            <div class="data">
-                                <span class="name_data">NICKNAME: </span>
-                                @if ($item->nickname == '')
-                                    <span class="mini_title">ПОЛЬЗОВАТЕЛЬ: {{ $item->id }}</span>
-                                @else
-                                    <span class="mini_title">{{ $item->nickname }}</span>
-                                @endif
-                            </div>
-                            <div class="data">
-                                <span class="name_data">EMAIL: </span>
-                                <span class="mini_title">{{ $item->email }}</span>
-                            </div>
-                            <div class="data">
-                                <span class="name_data">EXPERIENCE: </span>
-                                <span class="mini_title">{{ $item->exp }} <span
-                                        style="text-transform: lowercase;">exp</span></span>
-                            </div>
+                    <div class="user_data">
+                        <div class="data">
+                            <span class="name_data">NICKNAME: </span>
+                            @if ($user_data->nickname == '')
+                                <span class="mini_title">ПОЛЬЗОВАТЕЛЬ.{{ $user_data->id }}</span>
+                            @else
+                                <span class="mini_title">{{ $user_data->nickname }}</span>
+                            @endif
                         </div>
-                    @endforeach
+                        <div class="data">
+                            <span class="name_data">RANK: </span>
+                            <span class="mini_title">{{ $user_data->rank }}</span>
+                        </div>
+                        <div class="data">
+                            <span class="name_data">EXPERIENCE: </span>
+                            <span class="mini_title">{{ $user_data->exp }} <span
+                                    style="text-transform: lowercase;">exp</span></span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <a href="{{ route('edit_profile') }}" class="btn">РЕДАКТИРОВАТЬ</a>
+        <a href="{{ route('edit_profile') }}" class="profile_btn">РЕДАКТИРОВАТЬ</a>
         <div class="container_3">
 
-            @foreach ($course_status as $status)
-                @if ($status == 'active')
-                    <span class="title_2">АКТИВНЫЕ КУРСЫ</span>
-
-                    @foreach ($courses as $course)
-                        @if ($course->course_status == 'active')
-                            <a href="{{ route('lessons', ['course_id' => $course->id]) }}" class="course">
-                                <div class="text">
-                                    <span class="title_course">ОСНОВЫ {{ $course->name }}</span>
-                                    <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $course->duration_training }}
-                                        ДНЕЙ</span>
-                                </div>
-                            </a>
-                        @elseif ($course->course_status == 'in progress')
-                        @endif
-                    @endforeach
+            @foreach ($user_courses as $course_status => $course)
+                @if ($course_status == 'processing')
+                    <span class="title_2">Активные курсы</span>
+                @else
+                    <span class="title_2">Завершенные курсы</span>
                 @endif
+                @foreach ($courses as $item)
+                {{ dd($item) }}
+                    {{-- {{ dd($course_id) }} --}}
+                        {{-- @foreach ($courses as $course_data) --}}
+                        <a href="{{ route('lessons', ['course_id' => $item->id]) }}" class="course">
+                            <div class="text">
+                                <span class="title_course">ОСНОВЫ {{ $item->name }}</span>
+                                <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $item->duration_training }}
+                                    ДНЕЙ</span>
+                            </div>
+                            <div class="type">
+                                <span class="title_course">{{ $item->course_type }}</span>
+                            </div>
+                        </a>
+                        {{-- @endforeach --}}
+
+                        <div class="course">
+                            <div class="text">
+                                <span class="title_course">ОСНОВЫ {{ $item->name }}</span>
+                                <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $item->duration_training }}
+                                    ДНЕЙ</span>
+                            </div>
+                            <div class="type">
+                                <span class="title_course">{{ $item->course_type }}</span>
+                            </div>
+                        </div>
+
+                @endforeach
             @endforeach
+
+
         </div>
     </div>
 @endsection

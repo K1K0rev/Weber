@@ -3,25 +3,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <span class="title">ИЗМЕНЕНИЕ ЛИЧНЫХ ДАННЫХ</span>
     <div class="container">
-        <form method="POST" action="{{ route('update', $user->id) }}" enctype="multipart/form-data">
+        <span class="title">ИЗМЕНЕНИЕ ЛИЧНЫХ ДАННЫХ</span>
+        <form method="POST" action="{{ route('update', $user->id) }}">
             @csrf
             @method('PUT')
             <div class="data_input">
-                <label for="nickname">NICKNAME:</label>
+                <label for="nickname" class="data">NICKNAME:</label>
                 <input type="text" id="nickname" name="nickname">
             </div>
             <div class="data_input">
-                <label for="icon">ICON:</label>
-                <input type="file" id="icon" name="icon">
-            </div>
-            <div class="data_input">
-                <label for="email">EMAIL:</label>
+                <label for="email" class="data">EMAIL:</label>
                 <input type="text" id="email" name="email">
             </div>
             <div class="data_input">
-                <label for="password">PASSWORD:</label>
+                <label for="password" class="data">PASSWORD:</label>
                 <input type="text" id="password" name="password">
             </div>
             <button type="submit">ИЗМЕНИТЬ ДАННЫЕ</button>

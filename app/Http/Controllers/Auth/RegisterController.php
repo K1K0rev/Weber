@@ -22,14 +22,6 @@ class RegisterController extends Controller
 
         $data = $request->validated();
 
-        $login = $request->input('login');
-
-        $user_login = User::where('login', $login)->first();
-
-        if ($user_login) {
-            return back()->withErrors(['login' => '! Введите другой логин']);
-        }
-
         User::create([
             'login' => $data['login'],
             'email' => $data['email'],
