@@ -14,11 +14,8 @@ class ProfileController extends Controller
 
         $user_data = Auth::user();
 
-        $courses = $user_data->courses;
-
-        $user_courses = User_course::all()->groupBy("status");
-
-        return view('profile', compact('user_data','courses', 'user_courses'));
+        $user_courses = User_course::where('user_id', $user_data->id)->with('course')->get()->groupBy("status")->reverse();
+        return view('profile', compact('user_data', 'user_courses'));
     }
 }
 
