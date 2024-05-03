@@ -17,20 +17,17 @@ class CourseSeeder extends Seeder
             [
                 'name' => 'HTML',
                 'course_type' => 'frontend',
-                'start_date' => '2024-04-20',
-                'end_date' => '2024-04-20',
+                'duration' => '24',
             ],
             [
                 'name' => 'CSS',
                 'course_type' => 'frontend',
-                'start_date' => '2024-04-20',
-                'end_date' => '2024-04-20',
+                'duration' => '24',
             ],
             [
                 'name' => 'php',
                 'course_type' => 'backend',
-                'start_date' => '2024-04-20',
-                'end_date' => '2024-04-20',
+                'duration' => '24',
             ]
         ];
 

@@ -23,12 +23,8 @@
                 <textarea type="text" id="short_description" name="short_description" required></textarea>
             </div>
             <div class="data_input">
-                <label for="start_date" class="data">Дата начала:</label>
-                <input type="date" id="start_date" name="start_date" required>
-            </div>
-            <div class="data_input">
-                <label for="end_date" class="data">Дата окончания:</label>
-                <input type="date" id="end_date" name="end_date" required>
+                <label for="duration" class="data">Продолжительность:</label>
+                <input type="number" id="duration" name="duration" required>
             </div>
             <button type="submit">Добавить курс</button>
         </form>
@@ -62,8 +58,7 @@
                     <div class="course">
                         <span>{{ $course->name }}</span>
                         <span>{{ $course->course_type }}</span>
-                        <span>{{ $course->start_date }}</span>
-                        <span>{{ $course->end_date }}</span>
+                        <span>{{ $course->duration}}</span>
                         <button type="submit">
                             <img src="{{ asset('img/cross.png') }}" alt="cross" class="cross">
                         </button>

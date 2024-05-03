@@ -20,7 +20,7 @@
 
     <div class="burger" id="burger">
         <a href="{{ route('profile') }}">ПРОФИЛЬ</a>
-        <a href="">ПОДДЕРЖКА</a>
+        <a href="{{ route('support') }}">ПОДДЕРЖКА</a>
         <a href="{{ route('logout') }}">ВЫХОД</a>
     </div>
 @else

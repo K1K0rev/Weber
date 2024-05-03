@@ -14,9 +14,11 @@ class LessonController extends Controller
 
         $users = User::all();
 
+        $course_name = Course::where('name', $name)->get();
+
         $lesson = Lesson::where('name', $name)->get();
 
-        return view('lesson', compact('lesson', 'users'));
+        return view('lesson', compact('lesson', 'users', 'course_name'));
     }
 
     public function updateRank($user_id, $course_id) {
@@ -25,7 +27,7 @@ class LessonController extends Controller
 
         $user_course = User_course::where('course_id', $course_id)->update(['status' => 'completed']);
 
-        $user->exp += 100;
+        $user->exp += 25;
 
         $exp = $user->exp;
 
@@ -47,6 +49,5 @@ class LessonController extends Controller
 
         return redirect('profile');
     }
-
 
 }

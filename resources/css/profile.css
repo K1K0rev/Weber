@@ -106,6 +106,12 @@ main {
     height: 180px;
     background-color: #F6F6F6;
     border-radius: 20px;
+    align-items: center;
+}
+
+.status_icon {
+    margin: 50px;
+    width: 40px;
 }
 
 .text {
@@ -121,10 +127,13 @@ main {
 
 .type {
     width: 50%;
+    height: auto;
     display: flex;
-    text-align: center;
     justify-content: center;
-    align-items: center;
+}
+
+.type_img {
+    width: 350px;
 }
 
 .title_course {
@@ -135,6 +144,7 @@ main {
 .mini_title_course {
     font-size: 20px;
 }
+
 
 @media screen and (max-width: 900px ){
 

@@ -31,16 +31,14 @@ class AdminController extends Controller
             'name' => 'required',
             'course_type' => 'required',
             'short_description' => 'required',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after:start_date',
+            'duration' => 'required',
         ]);
 
         Course::create([
             'name' => $request->name,
             'course_type' => $request->course_type,
             'short_description' => $request->short_description,
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date,
+            'duration' => $request->duration,
         ]);
 
         return redirect('admin');

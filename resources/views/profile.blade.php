@@ -40,32 +40,59 @@
             @foreach ($user_courses as $course_status => $user_course)
                 @if ($course_status == 'processing')
                     <span class="title_2">Активные курсы</span>
-                @else
+                @elseif ($course_status == 'completed')
                     <span class="title_2">Завершенные курсы</span>
+                @else
+                <span class="title_2">Не завершенные курсы</span>
                 @endif
                 @foreach ($user_course as $course)
                     @if ($course_status == 'processing')
                         <a href="{{ route('lessons', ['course_id' => $course->course->id]) }}" class="course">
+                            <img src="{{ asset('img/active.svg') }}" alt="" class="status_icon">
                             <div class="text">
-                                <span class="title_course">ОСНОВЫ {{ $course->course->name }}</span>
-                                <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $course->course->duration_training }}
+                                <span class="title_course">{{ $course->course->name }}</span>
+                                <span class="mini_title_course">ДО ЗАВЕРШЕНИЯ: {{ $course->days }}
                                     ДНЕЙ</span>
                             </div>
                             <div class="type">
-                                <span class="title_course">{{ $course->course->course_type }}</span>
+                                @if ($course->course->course_type == 'backend')
+                                    <img src="{{ asset('img/back.svg') }}" alt="" class="type_img">
+                                @else
+                                    <img src="{{ asset('img/front.svg') }}" alt="" class="type_img">
+                                @endif
                             </div>
                         </a>
-                    @else
+                    @elseif ($course_status == 'completed')
                         <div class="course">
+                            <img src="{{ asset('img/complete.svg') }}" alt="" class="status_icon">
                             <div class="text">
-                                <span class="title_course">ОСНОВЫ {{ $course->course->name }}</span>
-                                <span class="mini_title_course">СРОК ОБУЧЕНИЯ: {{ $course->course->duration_training }}
+                                <span class="title_course">{{ $course->course->name }}</span>
+                                <span class="mini_title_course">ДО ЗАВЕРШЕНИЯ: {{ $course->days }}
                                     ДНЕЙ</span>
                             </div>
                             <div class="type">
-                                <span class="title_course">{{ $course->course->course_type }}</span>
+                                @if ($course->course->course_type == 'backend')
+                                    <img src="{{ asset('img/back.svg') }}" alt="" class="type_img">
+                                @else
+                                    <img src="{{ asset('img/front.svg') }}" alt="" class="type_img">
+                                @endif
                             </div>
                         </div>
+                    @else
+                    <div class="course">
+                        <img src="{{ asset('img/cross.png') }}" alt="" class="status_icon">
+                        <div class="text">
+                            <span class="title_course">{{ $course->course->name }}</span>
+                            <span class="mini_title_course">НЕ ЗАКОНЧЕН</span>
+                        </div>
+                        <div class="type">
+                            @if ($course->course->course_type == 'backend')
+                                <img src="{{ asset('img/back.svg') }}" alt="" class="type_img">
+                            @else
+                                <img src="{{ asset('img/front.svg') }}" alt="" class="type_img">
+                            @endif
+                        </div>
+                    </div>
                     @endif
                 @endforeach
             @endforeach
@@ -74,3 +101,4 @@
         </div>
     </div>
 @endsection
+

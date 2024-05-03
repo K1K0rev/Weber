@@ -17,8 +17,7 @@ class Course extends Model
         'course_type',
         'course_status',
         'short_description',
-        'start_date',
-        'end_date',
+        'duration',
     ];
 
     public $timestamps = false;

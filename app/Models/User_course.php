@@ -14,6 +14,7 @@ class User_course extends Model
         'user_id',
         'course_id',
         'status',
+        'end_date',
     ];
 
     public function course(): BelongsTo

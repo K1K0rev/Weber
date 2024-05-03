@@ -2,13 +2,10 @@
 
 @extends('layouts.app')
 
+
 @foreach ($lesson as $item)
 
-@extends('lesson.' . $item->name )
+@extends('lesson.course_'. $item->course_id . '.'. $item->name )
 
 @endforeach
-
-
-
-
 

@@ -3,15 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
 }
 
 .lessons {
     width: 70vw;
-    display: flex;
+    display: grid;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 100px;
     align-items: center;
 }

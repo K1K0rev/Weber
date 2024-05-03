@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('course_type');
             $table->string('short_description', 255)->nullable();
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->integer('duration')->default(0);
         });
     }
 

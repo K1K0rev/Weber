@@ -25,6 +25,6 @@ class AuthController extends Controller
         $request->session()->regenerate();
         Auth::login($request->user());
 
-        return redirect()->route('main');
+        return redirect()->route('catalog');
     }
 }

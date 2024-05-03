@@ -12,7 +12,8 @@
 }
 
 .mini_title {
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
@@ -30,6 +31,16 @@
     border-radius: 20px;
 }
 
+.status_icon {
+    margin: 50px;
+    width: 40px;
+}
+
+.status_icon_green {
+    margin: 60px;
+    width: 20px;
+}
+
 .text {
     width: 50%;
     height: 100%;
@@ -44,11 +55,15 @@
 
 .type {
     width: 50%;
+    height: auto;
     display: flex;
-    text-align: center;
     justify-content: center;
-    align-items: center;
 }
+
+.type_img {
+    width: 350px;
+}
+
 
 .title_course {
     font-size: 36px;
