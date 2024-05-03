@@ -63,11 +63,69 @@ input {
     font-weight: bold;
 }
 
-.error {
+.position_error {
+    width: 100vw;
     position: absolute;
-    top: 15%;
+    top: 100px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    animation: slideDown 1s ease-out;
+}
+
+.errors {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
     padding: 10px;
-    border: 1px solid #ffaa00;
+    border: 1px solid #ff0000;
     border-radius: 5px;
-    color: #ffaa00;
+    color: #ff0000;
+}
+
+li {
+    list-style: none;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-height: 900px) {
+
+    .position_error {
+        width: 40vw;
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        animation: slideDown 1s ease-out;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 1300px) {
+
+    .position_error {
+        width: 35vw;
+        font-size: 14px;
+    }
+
 }

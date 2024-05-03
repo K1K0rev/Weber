@@ -2,17 +2,22 @@
 
 @extends('layouts.app')
 @section('content')
-    <div class="auth">
-        <form method="POST" class="form_auth" id="registrationForm">
-            @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
+@if ($errors->any())
+    <div class="position_error">
+        <div class="errors">
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                @if ($error == 'The login has already been taken.')
+                    <span class="error">Логин уже существует введите другой</span>
+                @elseif ($error == 'The email has already been taken.')
+                    <span class="error">Email уже существует введите другой</span>
+                @endif
             @endforeach
-        </ul>
+        </div>
     </div>
 @endif
+    <div class="auth">
+
+        <form method="POST" class="form_auth" id="registrationForm">
             <div class="title">
                 <img src="{{ asset('img/logo.svg') }}" alt="logo">
                 <span class="text">РЕГИСТРАЦИЯ</span>
@@ -20,10 +25,10 @@
             @csrf
             <div class="input_date">
                 <div class="line">
-                    <input id="login" name="login" placeholder="LOGIN" value="{{ old('login') }}" required autofocus>
+                    <input id="login" name="login" placeholder="LOGIN" required autofocus>
                 </div>
                 <div class="line">
-                    <input id="email" name="email" placeholder="EMAIL" value="{{ old('email') }}" required autofocus>
+                    <input id="email" name="email" placeholder="EMAIL" required autofocus>
                 </div>
                 <div class="line">
                     <input id="password" type="password" name="password" placeholder="PASSWORD" required>
@@ -32,4 +37,5 @@
             </div>
         </form>
     </div>
+    {{-- <script src="{{ mix('resources/js/error.js') }}"></script> --}}
 @endsection

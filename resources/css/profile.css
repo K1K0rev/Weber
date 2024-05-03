@@ -146,11 +146,7 @@ main {
 }
 
 
-@media screen and (max-width: 900px ){
-
-    .container_2 {
-
-    }
+@media screen and (max-width: 1000px ){
 
     .title {
         font-size: 32px;
@@ -174,7 +170,7 @@ main {
     }
 
     .text {
-        width: 100%;
+        width: 60%;
     }
 
     .title_2 {
@@ -194,10 +190,29 @@ main {
     }
 
     .icon_profile {
-        width: 150px;
+        width: 200px;
         height: auto;
     }
 
+    .type_img {
+        width: 250px;
+    }
+
+    .status_icon {
+        margin: 20px;
+        width: 30px;
+    }
+
+}
+
+@media screen and (max-width: 700px ){
+    .text {
+        width: 30%;
+    }
+
+    .course {
+        width: 100%;
+    }
 }
 
 

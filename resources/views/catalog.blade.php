@@ -30,4 +30,6 @@
                     </a>
                 @endforeach
             @endif
-        @endsection
+        </div>
+    </div>
+@endsection

@@ -33,7 +33,7 @@
 
 .status_icon {
     margin: 50px;
-    width: 40px;
+    width: 35px;
 }
 
 .status_icon_green {
@@ -74,7 +74,7 @@
     font-size: 20px;
 }
 
-@media screen and (max-width: 900px ){
+@media screen and (max-width: 1000px ){
 
     .mini_title {
         font-size: 26px;
@@ -85,7 +85,7 @@
     }
 
     .text {
-        width: 100%;
+        width: 60%;
     }
 
     .title_course {
@@ -96,6 +96,26 @@
         font-size: 16px;
     }
 
+    .type_img {
+        width: 250px;
+    }
+
+    .status_icon {
+        margin: 10px;
+        width: 30px;
+    }
+
+    .status_icon_green {
+        margin: 15px;
+        width: 20px;
+    }
+
+}
+
+@media screen and (max-width: 700px ){
+    .text {
+        width: 35%;
+    }
 }
 
 @media screen and (max-width: 400px ){

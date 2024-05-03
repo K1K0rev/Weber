@@ -43,7 +43,7 @@
                 @elseif ($course_status == 'completed')
                     <span class="title_2">Завершенные курсы</span>
                 @else
-                <span class="title_2">Не завершенные курсы</span>
+                    <span class="title_2">Не завершенные курсы</span>
                 @endif
                 @foreach ($user_course as $course)
                     @if ($course_status == 'processing')
@@ -79,26 +79,23 @@
                             </div>
                         </div>
                     @else
-                    <div class="course">
-                        <img src="{{ asset('img/cross.png') }}" alt="" class="status_icon">
-                        <div class="text">
-                            <span class="title_course">{{ $course->course->name }}</span>
-                            <span class="mini_title_course">НЕ ЗАКОНЧЕН</span>
+                        <div class="course">
+                            <img src="{{ asset('img/cross.png') }}" alt="" class="status_icon">
+                            <div class="text">
+                                <span class="title_course">{{ $course->course->name }}</span>
+                                <span class="mini_title_course">НЕ ЗАКОНЧЕН</span>
+                            </div>
+                            <div class="type">
+                                @if ($course->course->course_type == 'backend')
+                                    <img src="{{ asset('img/back.svg') }}" alt="" class="type_img">
+                                @else
+                                    <img src="{{ asset('img/front.svg') }}" alt="" class="type_img">
+                                @endif
+                            </div>
                         </div>
-                        <div class="type">
-                            @if ($course->course->course_type == 'backend')
-                                <img src="{{ asset('img/back.svg') }}" alt="" class="type_img">
-                            @else
-                                <img src="{{ asset('img/front.svg') }}" alt="" class="type_img">
-                            @endif
-                        </div>
-                    </div>
                     @endif
                 @endforeach
             @endforeach
-
-
         </div>
     </div>
 @endsection
-
