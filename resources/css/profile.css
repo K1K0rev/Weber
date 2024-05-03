@@ -25,6 +25,14 @@ main {
 .icon_profile {
     width: 250px;
     height: auto;
+    animation: wave 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
 }
 
 .user {
@@ -66,6 +74,7 @@ main {
     gap: 20px;
     text-align: left;
     font-size: 30px;
+    cursor: default;
 }
 
 .data {
@@ -94,6 +103,15 @@ main {
     cursor: pointer;
 }
 
+.profile_btn:hover {
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.profile_btn:not(:hover) {
+    transition: 0.5s;
+}
+
 .block {
     display: flex;
     flex-direction: column;
@@ -109,9 +127,49 @@ main {
     align-items: center;
 }
 
+.course:hover {
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.course:not(:hover) {
+    transition: 0.5s;
+}
+
 .status_icon {
     margin: 50px;
     width: 40px;
+}
+
+@keyframes scroll {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes scaleUpAndDown {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(1.1);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+
+#clock {
+    animation: scroll 10s linear infinite;
+    z-index: 0;
+}
+
+#complete, #not_complete {
+    animation: scaleUpAndDown 1.5s linear infinite;
+    z-index: 0;
+}
+
+#active {
+    outline: none;
 }
 
 .text {
@@ -132,8 +190,25 @@ main {
     justify-content: center;
 }
 
+@keyframes rotateRightLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(2deg);
+    }
+    66% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .type_img {
     width: 350px;
+    animation: rotateRightLeft 4s linear infinite;
+    z-index: 0;
 }
 
 .title_course {

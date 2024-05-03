@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\User_course;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CatalogController extends Controller

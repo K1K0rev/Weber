@@ -20,7 +20,8 @@
                 <label for="password" class="data">PASSWORD:</label>
                 <input type="text" id="password" name="password">
             </div>
-            <button type="submit">ИЗМЕНИТЬ ДАННЫЕ</button>
+            <button type="submit" class="edit_btn">ИЗМЕНИТЬ ДАННЫЕ</button>
         </form>
     </div>
 @endsection
+

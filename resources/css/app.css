@@ -23,12 +23,33 @@ header {
     border-radius: 10px;
     align-items: center;
     background-color: #FFFFFF;
+    z-index: 1;
 }
 
 a {
     text-transform: none;
     text-decoration: none;
     color: black;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.logo_state {
+    width: 50px;
+    height: auto;
+}
+
+.logo:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px #667FC1);
+    transition: all 0.3s ease;
+}
+
+.logo:not(:hover) {
+    transition: 0.5s;
 }
 
 .icon {
@@ -39,12 +60,31 @@ a {
     cursor: pointer;
 }
 
+.icon:hover {
+    filter: drop-shadow(0 0 3px #667FC1);
+    transition: all 0.3s ease;
+}
+
+.icon:not(:hover) {
+    transition: 0.5s;
+}
+
 .catalog {
     border: 1px solid #667FC1;
     border-radius: 5px;
     color: #667FC1;
     padding: 10px;
 }
+
+.catalog:hover {
+    font-size: 22px;
+    transition: all 0.5s ease;
+}
+
+.catalog:not(:hover) {
+        transition: 0.5s;
+}
+
 
 /*button*/
 
@@ -72,20 +112,18 @@ footer {
 /*burger*/
 
 .burger {
+    display: none;
     position: fixed;
     top: 100px;
     right: 35px;
     width: 160px;
     height: auto;
-    opacity: 0;
     font-size: 20px;
-    /* animation: slide 0.5s linear; */
-    display: flex;
     text-align: center;
     flex-direction: column;
-    border: solid 1px #667FC1;
     border-radius: 5px;
     background-color: rgb(252, 252, 252);
+    filter: drop-shadow(0 0 2px #667FC1);
 }
 
 .burger a {
@@ -95,18 +133,40 @@ footer {
     color: #667FC1;
 }
 
+.burger a:hover {
+    transition: all 0.1s ease;
+    font-size: 21px;
+}
+
 .burger a:last-child {
     border-bottom: 0px;
 }
 
-/* @keyframes slide {
+/* анимации для бургер панели*/
+
+@keyframes slideDown {
     0% {
         transform: translateY(-10%);
+        opacity: 0;
     }
+
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
+        opacity: 1;
     }
-} */
+}
+
+@keyframes slideUp {
+    0% {
+    transform: translateY(-2%);
+    opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+}
 
 /*main*/
 
@@ -225,11 +285,6 @@ main {
 
     .block1_m {
         display: none;
-    }
-
-    .logo {
-        width: 50px;
-        height: auto;
     }
 
     .btn {

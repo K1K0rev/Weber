@@ -21,8 +21,6 @@ Route::post('/catalog/show/{id}/description', [CatalogController::class, 'descri
 
 Route::get('/support', [SupportController::class, 'index'])->name('support');
 
-Route::get('/about_us', [AboutUsController::class, 'index'])->name('about_us');
-
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 
 Route::post('/admin/store_course', [AdminController::class, 'store_course'])->name('store_course');

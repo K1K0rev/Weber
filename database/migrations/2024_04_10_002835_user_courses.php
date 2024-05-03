@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('user_courses', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id')->foreign('user_id')->references('id')->on('users');
-            $table->string('course_id')->foreign('course_id')->references('id')->on('courses');
+            $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
+            $table->integer('course_id')->foreign('course_id')->references('id')->on('courses');
             $table->enum('status', ['not_active', 'processing', 'completed', 'not_completed'])->default('not_active');
             $table->date('end_date');
             $table->timestamps();

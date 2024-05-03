@@ -7,7 +7,7 @@
 
 <div class="container">
     <span class="description">{{$course->short_description}}</span>
-    <form method="POST" action="{{ route('description', ['id' => $course->id]) }}">
+    <form method="POST" action="{{ route('description', ['id' => $course->id]) }}#active">
         @csrf
         <button class="btn_des" type="submit">ЗАПИСАТЬСЯ НА КУРС</button>
     </form>

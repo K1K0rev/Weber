@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\User;
 use App\Models\User_course;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -18,13 +16,6 @@ class ProfileController extends Controller
         $courses = Course::all();
 
         $user_courses = User_course::where('user_id', $user_data->id)->with('course')->get()->groupBy("status")->reverse();
-
-        // $user_course = User_course::where('course_id', $courses);
-
-        // if ($user_course->end_date <= Carbon::now()) {
-        //     $user_course->status = 'not_completed';
-        //     $user_course->save();
-        // }
 
         foreach ($user_courses as $item) {
 

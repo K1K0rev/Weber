@@ -2,19 +2,19 @@
 
 @extends('layouts.app')
 @section('content')
-@if ($errors->any())
-    <div class="position_error">
-        <div class="errors">
-            @foreach ($errors->all() as $error)
-                @if ($error == 'The login has already been taken.')
-                    <span class="error">Логин уже существует введите другой</span>
-                @elseif ($error == 'The email has already been taken.')
-                    <span class="error">Email уже существует введите другой</span>
-                @endif
-            @endforeach
+    @if ($errors->any())
+        <div class="position_error">
+            <div class="errors">
+                @foreach ($errors->all() as $error)
+                    @if ($error == 'The login has already been taken.')
+                        <span class="error">Логин уже существует введите другой</span>
+                    @elseif ($error == 'The email has already been taken.')
+                        <span class="error">Email уже существует введите другой</span>
+                    @endif
+                @endforeach
+            </div>
         </div>
-    </div>
-@endif
+    @endif
     <div class="auth">
 
         <form method="POST" class="form_auth" id="registrationForm">
@@ -30,8 +30,11 @@
                 <div class="line">
                     <input id="email" name="email" placeholder="EMAIL" required autofocus>
                 </div>
-                <div class="line">
-                    <input id="password" type="password" name="password" placeholder="PASSWORD" required>
+                <div>
+                    <div class="line">
+                        <input id="password" type="password" name="password" placeholder="PASSWORD" required>
+                    </div>
+                    <span class="input_description">Минимум 8 символов</span>
                 </div>
                 <button type="submit" class="btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>
             </div>

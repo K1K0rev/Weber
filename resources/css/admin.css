@@ -55,6 +55,12 @@ input:focus {
     background-color: #e9eeff;
 }
 
+.input_name_lesson {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
 select {
     font-size: 20px;
     width: auto;

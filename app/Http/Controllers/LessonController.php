@@ -6,7 +6,6 @@ use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\User;
 use App\Models\User_course;
-use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
@@ -14,11 +13,9 @@ class LessonController extends Controller
 
         $users = User::all();
 
-        $course_name = Course::where('name', $name)->get();
+        $lesson = Lesson::where('course_id', $course_id)->where('name', $name)->get();
 
-        $lesson = Lesson::where('name', $name)->get();
-
-        return view('lesson', compact('lesson', 'users', 'course_name'));
+        return view('lesson', compact('lesson', 'users'));
     }
 
     public function updateRank($user_id, $course_id) {

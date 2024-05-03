@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <a href="{{ route('edit_profile') }}" class="profile_btn">РЕДАКТИРОВАТЬ</a>
+        <a href="{{ route('edit_profile') }}" class="profile_btn" id="active">РЕДАКТИРОВАТЬ</a>
         <div class="container_3">
 
             @foreach ($user_courses as $course_status => $user_course)
@@ -48,7 +48,7 @@
                 @foreach ($user_course as $course)
                     @if ($course_status == 'processing')
                         <a href="{{ route('lessons', ['course_id' => $course->course->id]) }}" class="course">
-                            <img src="{{ asset('img/active.svg') }}" alt="" class="status_icon">
+                            <img src="{{ asset('img/active.svg') }}" alt="" class="status_icon" id="clock">
                             <div class="text">
                                 <span class="title_course">{{ $course->course->name }}</span>
                                 <span class="mini_title_course">ДО ЗАВЕРШЕНИЯ: {{ $course->days }}
@@ -64,7 +64,7 @@
                         </a>
                     @elseif ($course_status == 'completed')
                         <div class="course">
-                            <img src="{{ asset('img/complete.svg') }}" alt="" class="status_icon">
+                            <img src="{{ asset('img/complete.svg') }}" alt="" class="status_icon" id="complete">
                             <div class="text">
                                 <span class="title_course">{{ $course->course->name }}</span>
                                 <span class="mini_title_course">ДО ЗАВЕРШЕНИЯ: {{ $course->days }}
@@ -80,7 +80,7 @@
                         </div>
                     @else
                         <div class="course">
-                            <img src="{{ asset('img/cross.png') }}" alt="" class="status_icon">
+                            <img src="{{ asset('img/cross.png') }}" alt="" class="status_icon" id="not_complete">
                             <div class="text">
                                 <span class="title_course">{{ $course->course->name }}</span>
                                 <span class="mini_title_course">НЕ ЗАКОНЧЕН</span>

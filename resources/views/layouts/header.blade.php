@@ -3,17 +3,14 @@
 @auth
 
     <header>
-        @if (Route::currentRouteName() == 'main')
-            <img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'>
-        @else
-            <a href="{{ route('main') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'></a>
-        @endif
+        <img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo_state'>
+
         <div class="link">
             <a href="{{ route('catalog') }}" class="catalog">КАТАЛОГ КУРСОВ</a>
         </div>
         <div class="autorize">
-            <div class="header_icon" id="icon"><img src="{{ asset('img/rang/' . $user->rank . '.png') }}"
-                    alt="" class="icon">
+            <div class="header_icon" id="icon"><img src="{{ asset('img/rang/' . $user->rank . '.png') }}" alt=""
+                    class="icon">
             </div>
         </div>
     </header>
@@ -26,7 +23,7 @@
 @else
     <header>
         @if (Route::currentRouteName() == 'main')
-            <img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'>
+            <img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo_state'>
         @else
             <a href="{{ route('main') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo" class='logo'></a>
         @endif

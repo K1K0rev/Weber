@@ -47,7 +47,7 @@ input {
     color: #b0b0b0;
 }
 
-button {
+.edit_btn {
     padding: 10px;
     background: #FFFFFF;
     border: 1px solid #667FC1;
@@ -55,6 +55,15 @@ button {
     color: #667FC1;
     font-size: 20px;
     cursor: pointer;
+}
+
+.edit_btn:hover {
+    font-size: 21px;
+    transition: all 1s ease;
+}
+
+.edit_btn:not(:hover) {
+    transition: 1s;
 }
 
 @media screen and (max-width: 700px) {
