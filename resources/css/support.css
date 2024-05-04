@@ -1,0 +1,19 @@
+main{
+    display: flex;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.mini_title {
+    font-size: 20px;
+}
+
+.mail {
+    color: rgb(100, 4, 255);
+}

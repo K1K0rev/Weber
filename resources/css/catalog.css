@@ -1,0 +1,163 @@
+.courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 32px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.mini_title {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.course_link{
+    display: flex;
+    width: 80vw;
+    height: 180px;
+    background-color:  #F6F6F6;
+    border-radius: 20px;
+}
+
+.course_link:hover {
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.course_link:not(:hover) {
+    transition: 0.5s;
+}
+
+.status_icon {
+    margin: 50px;
+    width: 35px;
+}
+
+.status_icon_green {
+    margin: 60px;
+    width: 20px;
+}
+
+.text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+.type {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes rotateRightLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(2deg);
+    }
+    66% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.type_img {
+    width: 350px;
+    animation: rotateRightLeft 4s linear infinite;
+    z-index: 0;
+}
+
+.title_course {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.mini_title_course {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1000px ){
+
+    .mini_title {
+        font-size: 26px;
+    }
+
+    .course_link{
+        align-items: center;
+    }
+
+    .text {
+        width: 60%;
+    }
+
+    .title_course {
+        font-size: 34px;
+    }
+
+    .mini_title_course {
+        font-size: 16px;
+    }
+
+    .type_img {
+        width: 250px;
+    }
+
+    .status_icon {
+        margin: 10px;
+        width: 30px;
+    }
+
+    .status_icon_green {
+        margin: 15px;
+        width: 20px;
+    }
+
+}
+
+@media screen and (max-width: 700px ){
+    .text {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 400px ){
+
+    .mini_title {
+        font-size: 24px;
+    }
+
+    .title_course {
+        font-size: 28px;
+    }
+
+    .mini_title_course {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,17 @@
+.end_lesson {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px 50px 0px;
+}
+
+.end_btn {
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #667FC1;
+    border-radius: 5px;
+    color: #667FC1;
+    font-size: 20px;
+    cursor: pointer;
+    align-items: center;
+}

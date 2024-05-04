@@ -1,0 +1,39 @@
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lessons {
+    width: 70vw;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.lesson {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 250px;
+    height: 200px;
+    background: #F6F6F6;
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.mini_title {
+    font-size: 24px;
+}
+
